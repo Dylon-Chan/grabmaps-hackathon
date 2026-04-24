@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useMemo, useState, type CSSProperties } from "react";
+import { GrabMap } from "@/components/GrabMap";
+import { getActiveTrimmedQuest, getRenderableStops, routeStopsKey } from "@/lib/questState";
 import type {
   BadgeTier,
   City,
@@ -64,10 +66,15 @@ export function SeaGoApp() {
     [allQuests, cityId]
   );
   const activeQuest = cityQuests.find((quest) => quest.id === activeQuestId) ?? cityQuests[0];
-  const routeStops = useMemo(
-    () => trimmed?.stops ?? activeQuest?.stops.slice(0, 4) ?? [],
-    [activeQuest, trimmed]
+  const activeTrimmed = useMemo(
+    () => getActiveTrimmedQuest(trimmed, cityId, activeQuest?.id),
+    [trimmed, cityId, activeQuest?.id]
   );
+  const routeStops = useMemo(
+    () => getRenderableStops(activeQuest, trimmed, cityId),
+    [activeQuest, trimmed, cityId]
+  );
+  const currentRouteStopsKey = useMemo(() => routeStopsKey(routeStops), [routeStops]);
   const activeStop = routeStops[Math.min(activeStopIndex, routeStops.length - 1)];
   const completedStops = routeStops.filter((stop) => badges[stop.id]).length;
   const questComplete = routeStops.length > 0 && completedStops === routeStops.length;
@@ -97,6 +104,9 @@ export function SeaGoApp() {
     if (firstQuest) {
       setActiveQuestId(firstQuest.id);
       setActiveStopIndex(0);
+      setTrimmed(null);
+      setRoute(null);
+      setPlace(null);
       setScore(null);
       setVerification(null);
       setLastScoredStopName(null);
@@ -106,6 +116,16 @@ export function SeaGoApp() {
 
   useEffect(() => {
     if (!activeQuest) return;
+    let cancelled = false;
+
+    setTrimmed(null);
+    setRoute(null);
+    setPlace(null);
+    setActiveStopIndex(0);
+    setScore(null);
+    setVerification(null);
+    setLastScoredStopName(null);
+    setBadges({});
 
     async function trimQuest() {
       const response = await fetch(apiUrl("/api/quests/trim"), {
@@ -113,36 +133,56 @@ export function SeaGoApp() {
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ cityId, questId: activeQuest.id, minutes: budget })
       });
+      if (!response.ok) throw new Error(`Trim failed: ${response.status}`);
       const data = (await response.json()) as TrimmedQuest;
+      if (cancelled) return;
       setTrimmed(data);
       setActiveStopIndex(0);
     }
 
     trimQuest().catch(console.error);
+    return () => {
+      cancelled = true;
+    };
   }, [activeQuest, budget, cityId]);
 
   useEffect(() => {
+    let cancelled = false;
+    setRoute(null);
+
     async function fetchRoute() {
       const response = await fetch(apiUrl("/api/routes"), {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ stops: routeStops })
       });
-      setRoute((await response.json()) as RouteResponse);
+      if (!response.ok) throw new Error(`Route failed: ${response.status}`);
+      const nextRoute = (await response.json()) as RouteResponse;
+      if (!cancelled) setRoute(nextRoute);
     }
 
     if (routeStops.length > 1) fetchRoute().catch(console.error);
-  }, [routeStops]);
+    return () => {
+      cancelled = true;
+    };
+  }, [currentRouteStopsKey, routeStops]);
 
   useEffect(() => {
     if (!activeStop) return;
+    let cancelled = false;
+    setPlace(null);
 
     async function fetchPlace() {
       const response = await fetch(apiUrl(`/api/place/${encodeURIComponent(activeStop.placeId)}`));
-      setPlace((await response.json()) as PlaceDetails);
+      if (!response.ok) throw new Error(`Place fetch failed: ${response.status}`);
+      const nextPlace = (await response.json()) as PlaceDetails;
+      if (!cancelled) setPlace(nextPlace);
     }
 
     fetchPlace().catch(console.error);
+    return () => {
+      cancelled = true;
+    };
   }, [activeStop]);
 
   async function collectPhoto(imageName = activeStop.demoPhotoName) {
@@ -155,6 +195,7 @@ export function SeaGoApp() {
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ stopId: activeStop.id, imageName })
       });
+      if (!verifyResponse.ok) throw new Error(`Verify failed: ${verifyResponse.status}`);
       const verifyResult = (await verifyResponse.json()) as VerificationResult;
       setVerification(verifyResult);
       if (!verifyResult.passed) return;
@@ -164,6 +205,7 @@ export function SeaGoApp() {
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ stopId: activeStop.id, verification: verifyResult })
       });
+      if (!scoreResponse.ok) throw new Error(`Score failed: ${scoreResponse.status}`);
       const scoreResult = (await scoreResponse.json()) as PhotoScore;
       setScore(scoreResult);
       setLastScoredStopName(activeStop.name);
@@ -182,6 +224,9 @@ export function SeaGoApp() {
   function selectQuest(quest: Quest) {
     setActiveQuestId(quest.id);
     setActiveStopIndex(0);
+    setTrimmed(null);
+    setRoute(null);
+    setPlace(null);
     setScore(null);
     setVerification(null);
     setLastScoredStopName(null);
@@ -214,8 +259,16 @@ export function SeaGoApp() {
   return (
     <main className="appShell">
       <section className="mapStage" aria-label="SEA-GO quest map">
-        <MapGrid city={city} quest={activeQuest} stops={routeStops} activeStopId={activeStop.id} />
-        <RouteOverlay stops={routeStops} />
+        <GrabMap
+          city={city}
+          stops={routeStops}
+          activeStopId={activeStop.id}
+          route={route}
+          onStopSelect={(stopId) => {
+            const idx = routeStops.findIndex((s) => s.id === stopId);
+            if (idx !== -1) setActiveStopIndex(idx);
+          }}
+        />
 
         <header className="topHud">
           <div className="brandBlock">
@@ -283,8 +336,8 @@ export function SeaGoApp() {
               <strong>{routeStops.length}</strong>.
             </p>
             <span>
-              {route?.totalMinutes ?? trimmed?.totalMinutes ?? 0} min route ·{" "}
-              {trimmed?.skippedStops ?? 0} held back
+              {route?.totalMinutes ?? activeTrimmed?.totalMinutes ?? 0} min route ·{" "}
+              {activeTrimmed?.skippedStops ?? 0} held back
             </span>
           </div>
         </aside>
@@ -358,44 +411,6 @@ export function SeaGoApp() {
   );
 }
 
-function MapGrid({
-  city,
-  quest,
-  stops,
-  activeStopId
-}: {
-  city: City;
-  quest: Quest;
-  stops: QuestStop[];
-  activeStopId: string;
-}) {
-  return (
-    <div className={`mapGrid ${city.id}`} aria-hidden>
-      <div className="mapWater" />
-      <div className="questZone" style={{ "--quest-color": quest.color } as CSSProperties}>
-        {quest.zoneLabel}
-      </div>
-      {stops.map((stop, index) => (
-        <div
-          key={stop.id}
-          className={stop.id === activeStopId ? "mapPin active" : "mapPin"}
-          style={{ left: `${stop.mapPosition.x}%`, top: `${stop.mapPosition.y}%` }}
-        >
-          <span>{index + 1}</span>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-function RouteOverlay({ stops }: { stops: QuestStop[] }) {
-  const points = stops.map((stop) => `${stop.mapPosition.x},${stop.mapPosition.y}`).join(" ");
-  return (
-    <svg className="routeOverlay" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden>
-      <polyline points={points} fill="none" stroke="#087f73" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
 
 function ScoreCard({ score, stopName }: { score: PhotoScore; stopName: string }) {
   return (

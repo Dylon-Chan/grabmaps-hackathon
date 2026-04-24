@@ -115,8 +115,35 @@ class GrabMapsClient:
     def _coordinate(self, point: Coordinates) -> str:
         return f"{point.lng},{point.lat}"
 
+    def _decode_polyline(self, encoded: str) -> list[Coordinates]:
+        """Decode a Google Polyline-encoded string (GrabMaps uses precision 6)."""
+        coords: list[Coordinates] = []
+        index = 0
+        lat = 0
+        lng = 0
+        while index < len(encoded):
+            for is_lng in (False, True):
+                result = 0
+                shift = 0
+                while True:
+                    b = ord(encoded[index]) - 63
+                    index += 1
+                    result |= (b & 0x1F) << shift
+                    shift += 5
+                    if b < 0x20:
+                        break
+                delta = ~(result >> 1) if result & 1 else result >> 1
+                if is_lng:
+                    lng += delta
+                else:
+                    lat += delta
+            coords.append(Coordinates(lat=lat / 1e6, lng=lng / 1e6))
+        return coords
+
     def _parse_geometry(self, route: dict[str, Any]) -> list[Coordinates]:
         geometry = route.get("geometry")
+        if isinstance(geometry, str):
+            return self._decode_polyline(geometry)
         if isinstance(geometry, dict):
             coordinates = geometry.get("coordinates") or []
         else:
@@ -127,4 +154,3 @@ class GrabMapsClient:
             if isinstance(item, list | tuple) and len(item) >= 2:
                 parsed.append(Coordinates(lat=float(item[1]), lng=float(item[0])))
         return parsed
-

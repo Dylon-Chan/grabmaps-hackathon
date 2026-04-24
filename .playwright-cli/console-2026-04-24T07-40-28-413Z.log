@@ -1,0 +1,128 @@
+[     141ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     187ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[    2295ms] [WARNING] Expected value to be of type number, but found null instead. @ blob:http://localhost:3000/9b8f01eb-cbc1-4f72-bc16-afcaaa4a4983:8091
+[    2296ms] [WARNING] Expected value to be of type number, but found null instead. @ blob:http://localhost:3000/9b8f01eb-cbc1-4f72-bc16-afcaaa4a4983:8091
+[    2430ms] [WARNING] Image "street_11" could not be loaded. Please make sure you have added the image with map.addImage() or a "sprite" property in your style. You can provide missing images by listening for the "styleimagemissing" map event. @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[    2475ms] [WARNING] Image "movie_or_theatre_11" could not be loaded. Please make sure you have added the image with map.addImage() or a "sprite" property in your style. You can provide missing images by listening for the "styleimagemissing" map event. @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   92158ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   92176ms] [LOG] [Fast Refresh] done in 36ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   92299ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[   92303ms] [LOG] [Fast Refresh] done in 91ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  107578ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  107592ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  295024ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  295043ms] [LOG] [Fast Refresh] done in 32ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  316322ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  316330ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  316749ms] [WARNING] Expected value to be of type number, but found null instead. @ blob:http://localhost:3000/a53392d2-ef0a-4421-bc0e-09a61f47deb3:8091
+[  316754ms] [WARNING] Expected value to be of type number, but found null instead. @ blob:http://localhost:3000/a53392d2-ef0a-4421-bc0e-09a61f47deb3:8091
+[  316764ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  316764ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  316764ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  316765ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  316898ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  316898ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  316899ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  316899ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  317151ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  317152ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  317152ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  317153ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  341891ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  341910ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  341972ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  342026ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  342036ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  342189ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  342213ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  342213ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  342213ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  342230ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  342230ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  342237ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  342246ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  342254ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  344722ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  344751ms] [WARNING] Expected value to be of type number, but found null instead. @ blob:http://localhost:3000/a53392d2-ef0a-4421-bc0e-09a61f47deb3:8091
+[  344755ms] [WARNING] Expected value to be of type number, but found null instead. @ blob:http://localhost:3000/a53392d2-ef0a-4421-bc0e-09a61f47deb3:8091
+[  344806ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  344821ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  344825ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  344840ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  345321ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  345321ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  345321ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  345321ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  346302ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  346303ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  346308ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  346308ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  346311ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  346320ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  346320ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  346322ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  346322ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  346336ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  346363ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  346378ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  346397ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  346673ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  346678ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  346678ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  346682ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  346686ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  346686ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  346738ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  346740ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  346741ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  346746ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  346752ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  346802ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  346804ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  346807ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  346807ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  346811ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  346812ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  346857ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  346863ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  346869ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  346889ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  346912ms] [WARNING] Expected value to be of type number, but found null instead. @ blob:http://localhost:3000/a53392d2-ef0a-4421-bc0e-09a61f47deb3:8091
+[  346917ms] [WARNING] Expected value to be of type number, but found null instead. @ blob:http://localhost:3000/a53392d2-ef0a-4421-bc0e-09a61f47deb3:8091
+[  346923ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  347002ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  347002ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  347002ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  347002ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  347278ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  347278ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  347278ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  347278ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  348517ms] [WARNING] Expected value to be of type number, but found null instead. @ blob:http://localhost:3000/a53392d2-ef0a-4421-bc0e-09a61f47deb3:8091
+[  348524ms] [WARNING] Expected value to be of type number, but found null instead. @ blob:http://localhost:3000/a53392d2-ef0a-4421-bc0e-09a61f47deb3:8091
+[  348533ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  348565ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  348607ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  348613ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  348616ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  348619ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  348622ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  348636ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  348653ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  348669ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  348695ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  348716ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  348754ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  348796ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  349205ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  349206ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  349262ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  349280ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  349280ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  349280ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  349317ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  349320ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  349320ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  349320ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  349320ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  349321ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272

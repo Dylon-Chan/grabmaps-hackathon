@@ -1,0 +1,87 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - region "SEA-GO quest map" [ref=e3]:
+      - generic [ref=e6]:
+        - generic [ref=e7]:
+          - generic [ref=e8]: SG
+          - generic [ref=e9]:
+            - paragraph [ref=e10]: SEA-GO
+            - heading "Guided city quests that fit your afternoon." [level=1] [ref=e11]
+        - generic [ref=e12]:
+          - generic [ref=e13]:
+            - generic [ref=e14]: City
+            - combobox "City" [ref=e15]:
+              - option "Singapore"
+              - option "Bangkok" [selected]
+          - generic [ref=e16]:
+            - generic [ref=e17]: Time
+            - spinbutton "Time" [ref=e18]: "90"
+          - generic [ref=e19]:
+            - generic [ref=e20]: Badges
+            - strong [ref=e21]: "0"
+      - complementary "Quest list" [ref=e22]:
+        - generic [ref=e23]:
+          - paragraph [ref=e24]: Bang Rak
+          - heading "Quest zones" [level=2] [ref=e25]
+        - generic [ref=e26]:
+          - button "Hidden Hawker Gems Street-side noodles, charcoal grills, and market snacks." [ref=e153] [cursor=pointer]:
+            - generic [ref=e154]: 🍜
+            - generic [ref=e155]:
+              - strong [ref=e156]: Hidden Hawker Gems
+              - generic [ref=e157]: Street-side noodles, charcoal grills, and market snacks.
+          - button "Heritage Shophouse Walk River trade, old warehouses, and temple-side facades." [ref=e158] [cursor=pointer]:
+            - generic [ref=e159]: 🏛️
+            - generic [ref=e160]:
+              - strong [ref=e161]: Heritage Shophouse Walk
+              - generic [ref=e162]: River trade, old warehouses, and temple-side facades.
+          - button "Local Neighbourhood Drift Ferries, flower sellers, alleys, and everyday errands." [ref=e163] [cursor=pointer]:
+            - generic [ref=e164]: 🌿
+            - generic [ref=e165]:
+              - strong [ref=e166]: Local Neighbourhood Drift
+              - generic [ref=e167]: Ferries, flower sellers, alleys, and everyday errands.
+          - button "Natural Scene Trail River breezes, pocket parks, and shade between busy streets." [ref=e168] [cursor=pointer]:
+            - generic [ref=e169]: 🌳
+            - generic [ref=e170]:
+              - strong [ref=e171]: Natural Scene Trail
+              - generic [ref=e172]: River breezes, pocket parks, and shade between busy streets.
+        - generic [ref=e47]:
+          - paragraph [ref=e48]:
+            - text: 90 minutes trims 6 stops to
+            - strong [ref=e49]: "4"
+            - text: .
+          - generic [ref=e50]: 0 min route · 0 held back
+      - complementary "Active stop details" [ref=e51]:
+        - generic [ref=e52]:
+          - paragraph [ref=e53]: Stop 1 of 4
+          - heading "Charoen Krung Noodle Stall" [level=2] [ref=e173]
+        - generic [ref=e55]:
+          - generic [ref=e56]: Checking
+          - generic [ref=e57]: Rating pending
+          - generic [ref=e58]: Demo estimate
+        - paragraph [ref=e59]: Charoen Krung Noodle Stall reveals a small local detail that most maps flatten into a pin.
+        - generic [ref=e60]:
+          - text: Photo prompt
+          - strong [ref=e61]: Capture the place with one human detail and one environmental clue.
+        - generic [ref=e62]:
+          - button "Prev" [ref=e63] [cursor=pointer]
+          - button "Walk here" [ref=e64] [cursor=pointer]
+          - button "Collect" [ref=e65] [cursor=pointer]
+        - generic [ref=e66]:
+          - generic [ref=e67]: Upload prepared photo
+          - button "Upload prepared photo" [ref=e68]
+      - navigation "Route stops" [ref=e69]:
+        - button "1 Charoen Krung Noodle Stall" [ref=e174] [cursor=pointer]:
+          - generic [ref=e175]: "1"
+          - text: Charoen Krung Noodle Stall
+        - button "2 Bang Rak Market Bites" [ref=e176] [cursor=pointer]:
+          - generic [ref=e177]: "2"
+          - text: Bang Rak Market Bites
+        - button "3 Saphan Taksin Snacks" [ref=e178] [cursor=pointer]:
+          - generic [ref=e179]: "3"
+          - text: Saphan Taksin Snacks
+        - button "4 Talat Noi Dessert Cart" [ref=e180] [cursor=pointer]:
+          - generic [ref=e181]: "4"
+          - text: Talat Noi Dessert Cart
+  - button "Open Next.js Dev Tools" [ref=e83] [cursor=pointer]:
+    - img [ref=e84]
+  - alert [ref=e87]

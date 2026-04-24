@@ -1,0 +1,102 @@
+- generic [ref=e1]:
+  - main [ref=e2]:
+    - region "SEA-GO quest map" [ref=e16]:
+      - generic [ref=e18]:
+        - generic [ref=e107]:
+          - region "Map" [ref=e19]
+          - button "Map marker" [ref=e20] [cursor=pointer]:
+            - generic [ref=e21]: "1"
+          - button "Map marker" [ref=e22] [cursor=pointer]:
+            - generic [ref=e23]: "2"
+          - button "Map marker" [ref=e24] [cursor=pointer]:
+            - generic [ref=e25]: "3"
+          - button "Map marker" [ref=e26] [cursor=pointer]:
+            - generic [ref=e27]: "4"
+        - generic [ref=e28]:
+          - button "Zoom in" [ref=e29] [cursor=pointer]
+          - button "Zoom out" [ref=e31] [cursor=pointer]
+          - button "Drag to rotate map, click to reset north" [ref=e33]
+      - generic [ref=e35]:
+        - generic [ref=e36]:
+          - generic [ref=e37]: SG
+          - generic [ref=e38]:
+            - paragraph [ref=e39]: SEA-GO
+            - heading "Guided city quests that fit your afternoon." [level=1] [ref=e40]
+        - generic [ref=e41]:
+          - generic [ref=e42]:
+            - generic [ref=e43]: City
+            - combobox "City" [ref=e44]:
+              - option "Singapore" [selected]
+              - option "Bangkok"
+          - generic [ref=e45]:
+            - generic [ref=e46]: Time
+            - spinbutton "Time" [ref=e47]: "90"
+          - generic [ref=e48]:
+            - generic [ref=e49]: Badges
+            - strong [ref=e50]: "0"
+      - complementary "Quest list" [ref=e51]:
+        - generic [ref=e52]:
+          - paragraph [ref=e53]: Chinatown
+          - heading "Quest zones" [level=2] [ref=e54]
+        - generic [ref=e55]:
+          - button "Hidden Hawker Gems Old-school stalls, queue lore, and the plates locals plan around." [ref=e56] [cursor=pointer]:
+            - generic [ref=e57]: 🍜
+            - generic [ref=e58]:
+              - strong [ref=e59]: Hidden Hawker Gems
+              - generic [ref=e60]: Old-school stalls, queue lore, and the plates locals plan around.
+          - button "Heritage Shophouse Walk Peranakan colour, clan halls, and layered street history." [ref=e61] [cursor=pointer]:
+            - generic [ref=e62]: 🏛️
+            - generic [ref=e63]:
+              - strong [ref=e64]: Heritage Shophouse Walk
+              - generic [ref=e65]: Peranakan colour, clan halls, and layered street history.
+          - button "Local Neighbourhood Drift Wet markets, daily errands, and the poetry of routine." [ref=e66] [cursor=pointer]:
+            - generic [ref=e67]: 🌿
+            - generic [ref=e68]:
+              - strong [ref=e69]: Local Neighbourhood Drift
+              - generic [ref=e70]: Wet markets, daily errands, and the poetry of routine.
+          - button "Natural Scene Trail Green pauses and waterfront views just beyond the busy grid." [ref=e71] [cursor=pointer]:
+            - generic [ref=e72]: 🌳
+            - generic [ref=e73]:
+              - strong [ref=e74]: Natural Scene Trail
+              - generic [ref=e75]: Green pauses and waterfront views just beyond the busy grid.
+        - generic [ref=e76]:
+          - paragraph [ref=e77]:
+            - text: 90 minutes trims 6 stops to
+            - strong [ref=e78]: "4"
+            - text: .
+          - generic [ref=e79]: 69 min route · 2 held back
+      - complementary "Active stop details" [ref=e80]:
+        - generic [ref=e81]:
+          - paragraph [ref=e82]: Stop 2 of 4
+          - heading "Tong Ah Eating House" [level=2] [ref=e108]
+        - generic [ref=e84]:
+          - generic [ref=e85]: Open now
+          - generic [ref=e86]: 4.4 rating
+          - generic [ref=e87]: Live
+        - paragraph [ref=e88]: Kaya toast, kopi, and triangular shophouse geometry make this corner feel like a morning postcard.
+        - generic [ref=e89]:
+          - text: Photo prompt
+          - strong [ref=e90]: Frame the facade with a cup or breakfast detail.
+        - generic [ref=e91]:
+          - button "Prev" [ref=e92] [cursor=pointer]
+          - button "Walk here" [active] [ref=e93] [cursor=pointer]
+          - button "Collect" [ref=e94] [cursor=pointer]
+        - generic [ref=e95]:
+          - generic [ref=e96]: Upload prepared photo
+          - button "Upload prepared photo" [ref=e97]
+      - navigation "Route stops" [ref=e98]:
+        - button "1 Maxwell Food Centre" [ref=e99] [cursor=pointer]:
+          - generic [ref=e100]: "1"
+          - text: Maxwell Food Centre
+        - button "2 Tong Ah Eating House" [ref=e101] [cursor=pointer]:
+          - generic [ref=e102]: "2"
+          - text: Tong Ah Eating House
+        - button "3 Chinatown Complex Market" [ref=e103] [cursor=pointer]:
+          - generic [ref=e104]: "3"
+          - text: Chinatown Complex Market
+        - button "4 People's Park Food Centre" [ref=e105] [cursor=pointer]:
+          - generic [ref=e106]: "4"
+          - text: People's Park Food Centre
+  - button "Open Next.js Dev Tools" [ref=e11] [cursor=pointer]:
+    - img [ref=e12]
+  - alert [ref=e15]
