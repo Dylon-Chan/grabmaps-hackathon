@@ -45,6 +45,33 @@ button:disabled {
   opacity: 0.62;
 }
 
+.grabMap {
+  position: absolute;
+  inset: 0;
+  min-height: 100%;
+}
+
+.mapPin {
+  width: 28px;
+  height: 28px;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  border-radius: 999px;
+  background: #e040a0;
+  color: white;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 0 18px rgba(224, 64, 160, 0.5);
+  font-family: "Space Grotesk", Inter, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.mapPin.active {
+  background: #2ecb82;
+  box-shadow: 0 0 20px rgba(46, 203, 130, 0.65);
+  transform: scale(1.12);
+}
+
 h1,
 h2,
 h3,

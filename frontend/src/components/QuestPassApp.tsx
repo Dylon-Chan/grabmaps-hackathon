@@ -94,10 +94,15 @@ export function QuestPassApp() {
   const [flightMinsRemaining, setFlightMinsRemaining] = useState(DEMO_FLIGHT_MINS);
   const [flightSettingsOpen, setFlightSettingsOpen] = useState(false);
   const [questRouteState, setQuestRouteState] = useState<QuestRouteState>({});
+  const [activeRoute, setActiveRoute] = useState<RouteResponse | null>(null);
 
   const teammateQuests = useMemo(() => quests.map((quest, index) => toTeammateQuest(quest, index)), [quests]);
   const teammateBadges = useMemo(() => toTeammateBadges(quests, cities), [cities, quests]);
   const teammateNeighborhoods = useMemo(() => toTeammateNeighborhoods(quests), [quests]);
+  const activeCity = useMemo(
+    () => cities.find((city) => city.id === activeQuest?.sourceQuest.cityId) ?? cities[0],
+    [activeQuest?.sourceQuest.cityId, cities]
+  );
   const airportState = getAirportState(flightMinsRemaining);
   const userLevel = Math.floor(userXP / 500) + 1;
 
@@ -131,6 +136,28 @@ export function QuestPassApp() {
       setActiveQuest(teammateQuests[0]);
     }
   }, [activeQuest, teammateQuests]);
+
+  useEffect(() => {
+    if (!activeQuest || activeQuest.sourceQuest.stops.length < 2) {
+      setActiveRoute(null);
+      return;
+    }
+
+    let cancelled = false;
+    setActiveRoute(null);
+    fetchRouteForStops(activeQuest.sourceQuest.stops)
+      .then((route) => {
+        if (!cancelled) setActiveRoute(route);
+      })
+      .catch((error) => {
+        console.error(error);
+        if (!cancelled) setActiveRoute(null);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [activeQuest]);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -188,6 +215,7 @@ export function QuestPassApp() {
 
   async function prepareQuest(quest: TeammateQuest, option: TeammateTimeOption) {
     setActiveQuest(quest);
+    setActiveRoute(null);
     setActiveStopIdx(0);
     setCompletedStopIds([]);
     const trimResponse = await fetch(apiUrl("/api/quests/trim"), {
@@ -268,7 +296,7 @@ export function QuestPassApp() {
     );
   }
 
-  if (!activeQuest || teammateQuests.length === 0) {
+  if (!activeQuest || !activeCity || teammateQuests.length === 0) {
     return (
       <main className="qp-shell">
         <section className="qp-status-panel">
@@ -320,6 +348,9 @@ export function QuestPassApp() {
                 airportState={airportState}
                 flightMinsRemaining={flightMinsRemaining}
                 onEditFlight={() => setFlightSettingsOpen(true)}
+                city={activeCity}
+                activeQuest={activeQuest}
+                route={activeRoute}
               />
             )}
 
@@ -352,6 +383,8 @@ export function QuestPassApp() {
                 flightMinsRemaining={flightMinsRemaining}
                 initialStopIdx={activeStopIdx}
                 unlockedStopIds={completedStopIds}
+                city={activeCity}
+                route={activeRoute}
               />
             )}
 
