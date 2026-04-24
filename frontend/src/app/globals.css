@@ -1,0 +1,617 @@
+:root {
+  --paper: #fff7ed;
+  --panel: rgba(255, 249, 239, 0.92);
+  --ink: #18211f;
+  --muted: #66736b;
+  --line: rgba(24, 33, 31, 0.14);
+  --jade: #087f73;
+  --chili: #d94b2b;
+  --gold: #c69128;
+  --shadow: 0 18px 60px rgba(29, 35, 31, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  background: #e6ddcf;
+  color: var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing: 0;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.appShell {
+  min-height: 100vh;
+  padding: 14px;
+  background:
+    linear-gradient(135deg, rgba(8, 127, 115, 0.12), transparent 34%),
+    linear-gradient(315deg, rgba(217, 75, 43, 0.14), transparent 38%),
+    #e8dfd1;
+}
+
+.mapStage {
+  position: relative;
+  min-height: calc(100vh - 28px);
+  overflow: hidden;
+  border: 1px solid rgba(24, 33, 31, 0.12);
+  border-radius: 8px;
+  background: #d9d0bd;
+  box-shadow: var(--shadow);
+}
+
+.loadingPanel {
+  width: min(620px, calc(100vw - 32px));
+  margin: 15vh auto 0;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.loadingPanel h1 {
+  margin-bottom: 10px;
+}
+
+.loadingPanel p:last-child {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.mapGrid {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(35deg, transparent 0 47%, rgba(255, 255, 255, 0.34) 47% 49%, transparent 49%),
+    linear-gradient(115deg, transparent 0 55%, rgba(255, 255, 255, 0.32) 55% 57%, transparent 57%),
+    linear-gradient(90deg, rgba(71, 92, 81, 0.09) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(71, 92, 81, 0.08) 1px, transparent 1px),
+    #dacfba;
+  background-size: 100% 100%, 100% 100%, 74px 74px, 74px 74px;
+}
+
+.mapGrid.bangkok {
+  background:
+    linear-gradient(28deg, transparent 0 42%, rgba(255, 255, 255, 0.34) 42% 44%, transparent 44%),
+    linear-gradient(104deg, transparent 0 58%, rgba(255, 255, 255, 0.32) 58% 60%, transparent 60%),
+    linear-gradient(90deg, rgba(71, 92, 81, 0.09) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(71, 92, 81, 0.08) 1px, transparent 1px),
+    #dbd1bc;
+}
+
+.mapWater {
+  position: absolute;
+  right: -6%;
+  top: -10%;
+  width: 34%;
+  height: 125%;
+  transform: rotate(9deg);
+  background: rgba(8, 127, 115, 0.16);
+  border-left: 2px solid rgba(8, 127, 115, 0.18);
+}
+
+.questZone {
+  position: absolute;
+  left: 13%;
+  top: 28%;
+  width: 46%;
+  height: 42%;
+  display: grid;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--quest-color) 54%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--quest-color) 13%, transparent);
+  color: color-mix(in srgb, var(--quest-color) 76%, #17211e);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  box-shadow: 0 0 42px color-mix(in srgb, var(--quest-color) 24%, transparent);
+}
+
+.routeOverlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 8px 12px rgba(8, 127, 115, 0.2));
+  pointer-events: none;
+}
+
+.mapPin {
+  position: absolute;
+  z-index: 2;
+  width: 32px;
+  height: 32px;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  border: 2px solid rgba(255, 249, 239, 0.9);
+  border-radius: 999px;
+  background: var(--jade);
+  color: white;
+  box-shadow: 0 9px 22px rgba(15, 48, 42, 0.22);
+}
+
+.mapPin.active {
+  width: 42px;
+  height: 42px;
+  background: var(--chili);
+}
+
+.mapPin span {
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.topHud,
+.questRail,
+.stopDrawer,
+.routeChips {
+  position: absolute;
+  z-index: 4;
+}
+
+.topHud {
+  left: 18px;
+  right: 18px;
+  top: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  backdrop-filter: blur(18px);
+}
+
+.brandBlock,
+.hudControls,
+.drawerActions,
+.placeStrip,
+.routeChips {
+  display: flex;
+  align-items: center;
+}
+
+.brandBlock {
+  gap: 12px;
+  min-width: 0;
+}
+
+.brandMark {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  border-radius: 8px;
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: 900;
+}
+
+.eyebrow {
+  margin: 0 0 2px;
+  color: var(--chili);
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 0;
+  font-size: clamp(1rem, 2vw, 1.32rem);
+  line-height: 1.1;
+}
+
+.hudControls {
+  gap: 10px;
+}
+
+.hudControls label,
+.hudMetric {
+  min-height: 46px;
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.hudControls span,
+.hudMetric span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+select,
+input[type="number"] {
+  width: 112px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--ink);
+  font-weight: 800;
+}
+
+input[type="number"] {
+  width: 74px;
+}
+
+.hudMetric strong {
+  font-size: 1.15rem;
+}
+
+.questRail,
+.stopDrawer {
+  top: 104px;
+  bottom: 88px;
+  width: min(360px, calc(100vw - 36px));
+  padding: 18px;
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 16px 38px rgba(24, 33, 31, 0.12);
+}
+
+.questRail {
+  left: 18px;
+}
+
+.stopDrawer {
+  right: 18px;
+}
+
+.panelHeader h2 {
+  margin: 0 0 14px;
+  font-size: 1.4rem;
+  line-height: 1.05;
+}
+
+.questList {
+  display: grid;
+  gap: 10px;
+}
+
+.questButton {
+  width: 100%;
+  min-height: 78px;
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 10px;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.42);
+  color: var(--ink);
+  text-align: left;
+}
+
+.questButton.active {
+  border-color: color-mix(in srgb, var(--quest-color) 58%, var(--line));
+  background: color-mix(in srgb, var(--quest-color) 12%, rgba(255, 255, 255, 0.7));
+}
+
+.questEmoji {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.62);
+  font-size: 1.25rem;
+}
+
+.questButton strong,
+.questButton small {
+  display: block;
+}
+
+.questButton small {
+  margin-top: 4px;
+  color: var(--muted);
+  line-height: 1.3;
+}
+
+.trimBox,
+.promptBox,
+.verifyBox,
+.scoreCard,
+.memoryCard {
+  margin-top: 14px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.trimBox p {
+  margin-bottom: 4px;
+}
+
+.trimBox span,
+.promptBox span,
+.verifyBox span,
+.scoreCard small {
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.35;
+}
+
+.placeStrip {
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.placeStrip span,
+.routeChip span,
+.memoryCard span {
+  border-radius: 999px;
+  background: rgba(8, 127, 115, 0.1);
+  color: var(--jade);
+  font-size: 0.76rem;
+  font-weight: 900;
+  padding: 6px 9px;
+}
+
+.lore {
+  color: #33403b;
+  line-height: 1.55;
+}
+
+.promptBox strong {
+  display: block;
+  margin-top: 4px;
+  line-height: 1.35;
+}
+
+.drawerActions {
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.primaryButton,
+.secondaryButton {
+  min-height: 42px;
+  padding: 0 14px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  font-weight: 900;
+}
+
+.primaryButton {
+  flex: 1;
+  border-color: var(--chili);
+  background: var(--chili);
+  color: white;
+}
+
+.primaryButton:disabled {
+  opacity: 0.65;
+}
+
+.secondaryButton {
+  background: rgba(255, 255, 255, 0.55);
+  color: var(--ink);
+}
+
+.uploadLine {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.uploadLine input {
+  width: 100%;
+  padding: 10px;
+  border: 1px dashed rgba(24, 33, 31, 0.26);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.verifyBox {
+  display: grid;
+  gap: 4px;
+}
+
+.verifyBox.pass {
+  border-color: rgba(8, 127, 115, 0.34);
+}
+
+.verifyBox.fail {
+  border-color: rgba(217, 75, 43, 0.38);
+}
+
+.scoreCard {
+  display: grid;
+  gap: 12px;
+  background: linear-gradient(135deg, rgba(198, 145, 40, 0.18), rgba(255, 255, 255, 0.58));
+}
+
+.scoreCard > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.scoreCard > div:first-child strong {
+  color: var(--gold);
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.categoryGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.categoryGrid span {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.54);
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.categoryGrid b {
+  color: var(--ink);
+}
+
+.scoreCard p {
+  margin-bottom: 0;
+  line-height: 1.45;
+}
+
+.memoryCard h3 {
+  margin: 0 0 10px;
+}
+
+.memoryCard div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.routeChips {
+  left: 50%;
+  bottom: 18px;
+  width: min(760px, calc(100vw - 36px));
+  transform: translateX(-50%);
+  gap: 8px;
+  padding: 10px;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  backdrop-filter: blur(18px);
+}
+
+.routeChip {
+  min-width: 132px;
+  min-height: 44px;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.54);
+  color: var(--ink);
+  font-size: 0.8rem;
+  font-weight: 800;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.routeChip.active {
+  border-color: rgba(217, 75, 43, 0.46);
+}
+
+@media (max-width: 940px) {
+  .appShell {
+    padding: 0;
+  }
+
+  .mapStage {
+    min-height: 100vh;
+    border: 0;
+    border-radius: 0;
+  }
+
+  .topHud {
+    left: 10px;
+    right: 10px;
+    top: 10px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .hudControls {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 74px;
+  }
+
+  .questRail,
+  .stopDrawer {
+    width: calc(100vw - 20px);
+    left: 10px;
+    right: 10px;
+  }
+
+  .questRail {
+    top: 160px;
+    bottom: auto;
+    max-height: 31vh;
+  }
+
+  .stopDrawer {
+    top: auto;
+    bottom: 84px;
+    max-height: 39vh;
+  }
+
+  .routeChips {
+    bottom: 10px;
+    width: calc(100vw - 20px);
+  }
+
+  .routeChip {
+    min-width: 210px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .mapPin,
+  .questButton,
+  .primaryButton,
+  .secondaryButton,
+  .routeChip {
+    transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+  }
+
+  .questButton:hover,
+  .routeChip:hover,
+  .primaryButton:hover,
+  .secondaryButton:hover {
+    transform: translateY(-1px);
+  }
+}

@@ -1,0 +1,2 @@
+"""SEA-GO FastAPI backend."""
+
