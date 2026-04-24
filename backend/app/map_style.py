@@ -5,6 +5,7 @@ from typing import Any
 
 LEGACY_VECTOR_TILE_PREFIX = "https://maps.grab.com/maps/tiles/v2/vector/"
 API_VECTOR_TILE_PREFIX = "https://maps.grab.com/api/maps/tiles/v2/vector/"
+BACKEND_VECTOR_TILE_PREFIX = "/api/map/tiles/v2/vector/"
 
 
 def browser_safe_map_style(style: dict[str, Any]) -> dict[str, Any]:
@@ -21,5 +22,7 @@ def browser_safe_map_style(style: dict[str, Any]) -> dict[str, Any]:
 
 def _browser_safe_tile_url(tile: Any) -> Any:
     if isinstance(tile, str) and tile.startswith(LEGACY_VECTOR_TILE_PREFIX):
-        return f"{API_VECTOR_TILE_PREFIX}{tile.removeprefix(LEGACY_VECTOR_TILE_PREFIX)}"
+        return f"{BACKEND_VECTOR_TILE_PREFIX}{tile.removeprefix(LEGACY_VECTOR_TILE_PREFIX)}"
+    if isinstance(tile, str) and tile.startswith(API_VECTOR_TILE_PREFIX):
+        return f"{BACKEND_VECTOR_TILE_PREFIX}{tile.removeprefix(API_VECTOR_TILE_PREFIX)}"
     return tile

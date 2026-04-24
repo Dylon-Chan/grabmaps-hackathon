@@ -71,6 +71,25 @@ async def test_get_directions_uses_gateway_direction_endpoint_with_lng_lat_coord
 
 
 @pytest.mark.asyncio
+async def test_get_vector_tile_uses_bearer_auth_and_api_tile_path():
+    async def handler(request: httpx.Request) -> httpx.Response:
+        assert request.method == "GET"
+        assert request.url.path == "/api/maps/tiles/v2/vector/karta-v3/12/3456/7890.pbf"
+        assert request.headers["authorization"] == "Bearer test-key"
+        return httpx.Response(200, content=b"tile-bytes", headers={"content-type": "application/x-protobuf"})
+
+    client = GrabMapsClient(
+        api_key="test-key",
+        http_client=httpx.AsyncClient(transport=httpx.MockTransport(handler), base_url="https://maps.grab.com"),
+    )
+
+    content, content_type = await client.get_vector_tile("karta-v3", 12, 3456, 7890)
+
+    assert content == b"tile-bytes"
+    assert content_type == "application/x-protobuf"
+
+
+@pytest.mark.asyncio
 async def test_search_places_uses_keyword_country_location_and_limit():
     async def handler(request: httpx.Request) -> httpx.Response:
         assert request.url.path == "/api/v1/maps/poi/v1/search"

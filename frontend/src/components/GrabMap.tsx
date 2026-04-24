@@ -39,8 +39,8 @@ export function GrabMap({
     let cancelled = false;
 
     fetch(`${API_BASE_URL}/api/map/style`)
-      .then((res) => (res.ok ? res.json() : { style: null, apiKey: null }))
-      .then(({ style, apiKey }: { style: maplibregl.StyleSpecification | null; apiKey: string | null }) => {
+      .then((res) => (res.ok ? res.json() : { style: null }))
+      .then(({ style }: { style: maplibregl.StyleSpecification | null }) => {
         if (cancelled || !containerRef.current) return;
         const currentCity = latestCityRef.current;
         map = new maplibregl.Map({
@@ -49,15 +49,6 @@ export function GrabMap({
           center: [currentCity.center.lng, currentCity.center.lat],
           zoom: currentCity.zoom,
           attributionControl: false,
-          // Attach the Bearer token to every request MapLibre makes to maps.grab.com
-          // (tiles, sprites, glyphs) so they are authenticated in the browser.
-          transformRequest: apiKey
-            ? (url) => {
-                if (url.startsWith("https://maps.grab.com")) {
-                  return { url, headers: { Authorization: `Bearer ${apiKey}` } };
-                }
-              }
-            : undefined,
         });
         map.addControl(new maplibregl.AttributionControl({ compact: true }), "bottom-right");
         map.addControl(new maplibregl.NavigationControl({ visualizePitch: false }), "top-left");
