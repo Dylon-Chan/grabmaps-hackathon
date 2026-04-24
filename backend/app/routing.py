@@ -56,3 +56,12 @@ def interpolate_polyline(source: Coordinates, target: Coordinates) -> list[Coord
     )
     return [source, midpoint, target]
 
+
+def align_polyline_to_stops(
+    source: QuestStop,
+    target: QuestStop,
+    polyline: list[Coordinates],
+) -> list[Coordinates]:
+    if len(polyline) <= 1:
+        return [source.coordinates, target.coordinates]
+    return [source.coordinates, *polyline[1:-1], target.coordinates]

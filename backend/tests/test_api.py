@@ -1,7 +1,10 @@
 from fastapi.testclient import TestClient
 
 from app import data as quest_data
+from app.map_style import browser_safe_map_style
 from app.main import app
+from app.models import Coordinates
+from app.routing import align_polyline_to_stops
 
 
 client = TestClient(app)
@@ -66,3 +69,66 @@ def test_place_country_code_matches_demo_city():
     assert country_for_place_id is not None
     assert country_for_place_id("grab:sg:maxwell") == "SGP"
     assert country_for_place_id("grab:bangkok:bkk-hidden-hawker-gems:1") == "THA"
+
+
+def test_live_route_geometry_is_aligned_to_exact_stop_coordinates():
+    source = quest_data.get_stop("sg-maxwell")
+    target = quest_data.get_stop("sg-tong-ah")
+    snapped_geometry = [
+        Coordinates(lat=1.280504, lng=103.844855),
+        Coordinates(lat=1.2798, lng=103.8438),
+        Coordinates(lat=1.279099, lng=103.842818),
+    ]
+
+    aligned = align_polyline_to_stops(source, target, snapped_geometry)
+
+    assert aligned[0] == source.coordinates
+    assert aligned[-1] == target.coordinates
+    assert aligned[1] == snapped_geometry[1]
+
+
+def test_map_style_rewrites_legacy_grabmaps_vector_tiles_to_api_urls():
+    style = {
+        "version": 8,
+        "sources": {
+            "grabmaptiles": {
+                "type": "vector",
+                "tiles": ["https://maps.grab.com/maps/tiles/v2/vector/karta-v3/{z}/{x}/{y}.pbf"],
+            },
+            "internalpoitiles": {
+                "type": "vector",
+                "tiles": ["https://maps.grab.com/maps/tiles/v2/vector/internal-poi-v3/{z}/{x}/{y}.pbf"],
+            },
+        },
+        "layers": [],
+    }
+
+    rewritten = browser_safe_map_style(style)
+
+    assert rewritten["sources"]["grabmaptiles"]["tiles"] == [
+        "https://maps.grab.com/api/maps/tiles/v2/vector/karta-v3/{z}/{x}/{y}.pbf"
+    ]
+    assert rewritten["sources"]["internalpoitiles"]["tiles"] == [
+        "https://maps.grab.com/api/maps/tiles/v2/vector/internal-poi-v3/{z}/{x}/{y}.pbf"
+    ]
+    assert style["sources"]["grabmaptiles"]["tiles"] == [
+        "https://maps.grab.com/maps/tiles/v2/vector/karta-v3/{z}/{x}/{y}.pbf"
+    ]
+    assert style["sources"]["internalpoitiles"]["tiles"] == [
+        "https://maps.grab.com/maps/tiles/v2/vector/internal-poi-v3/{z}/{x}/{y}.pbf"
+    ]
+
+
+def test_map_style_keeps_browser_safe_styles():
+    style = {
+        "version": 8,
+        "sources": {
+            "open": {
+                "type": "vector",
+                "tiles": ["https://example.test/api/tiles/{z}/{x}/{y}.pbf"],
+            }
+        },
+        "layers": [],
+    }
+
+    assert browser_safe_map_style(style) == style

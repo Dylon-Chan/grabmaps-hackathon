@@ -1,0 +1,113 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - region "SEA-GO quest map" [ref=e3]:
+      - generic:
+        - generic:
+          - region "Map" [ref=e87]
+          - button "Map marker" [ref=e88] [cursor=pointer]:
+            - generic [ref=e89]: "1"
+          - button "Map marker" [ref=e90] [cursor=pointer]:
+            - generic [ref=e91]: "2"
+          - button "Map marker" [ref=e92] [cursor=pointer]:
+            - generic [ref=e93]: "3"
+          - button "Map marker" [ref=e94] [cursor=pointer]:
+            - generic [ref=e95]: "4"
+        - generic:
+          - generic:
+            - generic [ref=e96]:
+              - button "Zoom in" [ref=e97] [cursor=pointer]
+              - button "Zoom out" [ref=e99] [cursor=pointer]
+              - button "Drag to rotate map, click to reset north" [ref=e101]
+            - group [ref=e103]:
+              - generic "Toggle attribution" [ref=e104] [cursor=pointer]
+              - generic [ref=e105]:
+                - link "© OpenMapTiles" [ref=e106] [cursor=pointer]:
+                  - /url: https://www.openmaptiles.org/
+                - link "© OpenStreetMap contributors" [ref=e107] [cursor=pointer]:
+                  - /url: https://www.openstreetmap.org/copyright
+                - link "Terms of Service" [ref=e108] [cursor=pointer]:
+                  - /url: https://www.grab.com/terms-policies/transport-delivery-logistics
+      - generic [ref=e5]:
+        - generic [ref=e6]:
+          - generic [ref=e7]: SG
+          - generic [ref=e8]:
+            - paragraph [ref=e9]: SEA-GO
+            - heading "Guided city quests that fit your afternoon." [level=1] [ref=e10]
+        - generic [ref=e11]:
+          - generic [ref=e12]:
+            - generic [ref=e13]: City
+            - combobox "City" [ref=e14]:
+              - option "Singapore" [selected]
+              - option "Bangkok"
+          - generic [ref=e15]:
+            - generic [ref=e16]: Time
+            - spinbutton "Time" [ref=e17]: "90"
+          - generic [ref=e18]:
+            - generic [ref=e19]: Badges
+            - strong [ref=e20]: "0"
+      - complementary "Quest list" [ref=e21]:
+        - generic [ref=e22]:
+          - paragraph [ref=e23]: Chinatown
+          - heading "Quest zones" [level=2] [ref=e24]
+        - generic [ref=e25]:
+          - button "Hidden Hawker Gems Old-school stalls, queue lore, and the plates locals plan around." [ref=e26] [cursor=pointer]:
+            - generic [ref=e27]: 🍜
+            - generic [ref=e28]:
+              - strong [ref=e29]: Hidden Hawker Gems
+              - generic [ref=e30]: Old-school stalls, queue lore, and the plates locals plan around.
+          - button "Heritage Shophouse Walk Peranakan colour, clan halls, and layered street history." [ref=e31] [cursor=pointer]:
+            - generic [ref=e32]: 🏛️
+            - generic [ref=e33]:
+              - strong [ref=e34]: Heritage Shophouse Walk
+              - generic [ref=e35]: Peranakan colour, clan halls, and layered street history.
+          - button "Local Neighbourhood Drift Wet markets, daily errands, and the poetry of routine." [ref=e36] [cursor=pointer]:
+            - generic [ref=e37]: 🌿
+            - generic [ref=e38]:
+              - strong [ref=e39]: Local Neighbourhood Drift
+              - generic [ref=e40]: Wet markets, daily errands, and the poetry of routine.
+          - button "Natural Scene Trail Green pauses and waterfront views just beyond the busy grid." [ref=e41] [cursor=pointer]:
+            - generic [ref=e42]: 🌳
+            - generic [ref=e43]:
+              - strong [ref=e44]: Natural Scene Trail
+              - generic [ref=e45]: Green pauses and waterfront views just beyond the busy grid.
+        - generic [ref=e46]:
+          - paragraph [ref=e47]:
+            - text: 90 minutes trims 6 stops to
+            - strong [ref=e48]: "4"
+            - text: .
+          - generic [ref=e49]: 69 min route · 2 held back
+      - complementary "Active stop details" [ref=e50]:
+        - generic [ref=e51]:
+          - paragraph [ref=e52]: Stop 1 of 4
+          - heading "Maxwell Food Centre" [level=2] [ref=e53]
+        - generic [ref=e54]:
+          - generic [ref=e55]: Open now
+          - generic [ref=e56]: 4.4 rating
+          - generic [ref=e57]: Live
+        - paragraph [ref=e58]: A lunchtime institution where smoke, steel counters, and patient queues turn everyday meals into civic ritual.
+        - generic [ref=e59]:
+          - text: Photo prompt
+          - strong [ref=e60]: Capture the stall life without blocking the queue.
+        - generic [ref=e61]:
+          - button "Prev" [ref=e62] [cursor=pointer]
+          - button "Walk here" [ref=e63] [cursor=pointer]
+          - button "Collect" [ref=e64] [cursor=pointer]
+        - generic [ref=e65]:
+          - generic [ref=e66]: Upload prepared photo
+          - button "Upload prepared photo" [ref=e67]
+      - navigation "Route stops" [ref=e68]:
+        - button "1 Maxwell Food Centre" [ref=e69] [cursor=pointer]:
+          - generic [ref=e70]: "1"
+          - text: Maxwell Food Centre
+        - button "2 Tong Ah Eating House" [ref=e71] [cursor=pointer]:
+          - generic [ref=e72]: "2"
+          - text: Tong Ah Eating House
+        - button "3 Chinatown Complex Market" [ref=e73] [cursor=pointer]:
+          - generic [ref=e74]: "3"
+          - text: Chinatown Complex Market
+        - button "4 People's Park Food Centre" [ref=e75] [cursor=pointer]:
+          - generic [ref=e76]: "4"
+          - text: People's Park Food Centre
+  - button "Open Next.js Dev Tools" [ref=e82] [cursor=pointer]:
+    - img [ref=e83]
+  - alert [ref=e86]

@@ -1,0 +1,154 @@
+[     125ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     132ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     716ms] [WARNING] Expected value to be of type number, but found null instead. @ blob:http://localhost:3000/0d448eaa-0b89-49f6-acd8-9c1d75071e96:8091
+[     720ms] [WARNING] Expected value to be of type number, but found null instead. @ blob:http://localhost:3000/0d448eaa-0b89-49f6-acd8-9c1d75071e96:8091
+[     742ms] [WARNING] Image "movie_or_theatre_11" could not be loaded. Please make sure you have added the image with map.addImage() or a "sprite" property in your style. You can provide missing images by listening for the "styleimagemissing" map event. @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[     795ms] [WARNING] Image "street_11" could not be loaded. Please make sure you have added the image with map.addImage() or a "sprite" property in your style. You can provide missing images by listening for the "styleimagemissing" map event. @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  122614ms] [WARNING] Expected value to be of type number, but found null instead. @ blob:http://localhost:3000/0d448eaa-0b89-49f6-acd8-9c1d75071e96:8091
+[  122617ms] [WARNING] Expected value to be of type number, but found null instead. @ blob:http://localhost:3000/0d448eaa-0b89-49f6-acd8-9c1d75071e96:8091
+[  123825ms] [WARNING] Image "gates_11" could not be loaded. Please make sure you have added the image with map.addImage() or a "sprite" property in your style. You can provide missing images by listening for the "styleimagemissing" map event. @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  180886ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  180887ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  180887ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  180888ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  180938ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  180938ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  180939ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  180939ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  180987ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  180987ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  180987ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  180987ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  181003ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  181012ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  181019ms] [LOG] [Fast Refresh] done in 116ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  867512ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=Mv9LG8kkQ8Y3aPb1LFXro' failed:  @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13299
+[  868523ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=Mv9LG8kkQ8Y3aPb1LFXro' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13299
+[  869526ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=Mv9LG8kkQ8Y3aPb1LFXro' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13299
+[  870530ms] [ERROR] WebSocket connection to 'ws://localhost:3000/_next/webpack-hmr?id=Mv9LG8kkQ8Y3aPb1LFXro' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_client_0fhqo1d._.js:13299
+[  871761ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  872071ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  872081ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  872096ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:8000/api/cities:0
+[  872097ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://localhost:8000/api/quests:0
+[  889097ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  889104ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  889560ms] [WARNING] Expected value to be of type number, but found null instead. @ blob:http://localhost:3000/d732e124-0951-4ac3-b4cf-8c11f93fd690:8091
+[  889565ms] [WARNING] Expected value to be of type number, but found null instead. @ blob:http://localhost:3000/d732e124-0951-4ac3-b4cf-8c11f93fd690:8091
+[  889640ms] [WARNING] Image "movie_or_theatre_11" could not be loaded. Please make sure you have added the image with map.addImage() or a "sprite" property in your style. You can provide missing images by listening for the "styleimagemissing" map event. @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  889668ms] [WARNING] Image "street_11" could not be loaded. Please make sure you have added the image with map.addImage() or a "sprite" property in your style. You can provide missing images by listening for the "styleimagemissing" map event. @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  925958ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  926722ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  934059ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  934076ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  936889ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  936896ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  937258ms] [WARNING] Expected value to be of type number, but found null instead. @ blob:http://localhost:3000/dbd5af8c-10e2-4053-8508-697a1b649a68:8091
+[  937259ms] [WARNING] Expected value to be of type number, but found null instead. @ blob:http://localhost:3000/dbd5af8c-10e2-4053-8508-697a1b649a68:8091
+[  937274ms] [WARNING] Image "movie_or_theatre_11" could not be loaded. Please make sure you have added the image with map.addImage() or a "sprite" property in your style. You can provide missing images by listening for the "styleimagemissing" map event. @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  937368ms] [WARNING] Image "street_11" could not be loaded. Please make sure you have added the image with map.addImage() or a "sprite" property in your style. You can provide missing images by listening for the "styleimagemissing" map event. @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  954372ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[  957972ms] [WARNING] Image "subdivision_gate_11" could not be loaded. Please make sure you have added the image with map.addImage() or a "sprite" property in your style. You can provide missing images by listening for the "styleimagemissing" map event. @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[  985527ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1059500ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[ 1059511ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[ 1059811ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1059815ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1059819ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1059834ms] [WARNING] Expected value to be of type number, but found null instead. @ blob:http://localhost:3000/176028aa-a995-43a9-9793-ca41a1d87e5a:8091
+[ 1059835ms] [WARNING] Expected value to be of type number, but found null instead. @ blob:http://localhost:3000/176028aa-a995-43a9-9793-ca41a1d87e5a:8091
+[ 1059837ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1059945ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1059945ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1060004ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1060004ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1060005ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1060005ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1060022ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1060022ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1060022ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1060048ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1063277ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1063296ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1063310ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1063327ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1063349ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1063361ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1063660ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1063660ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1063695ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1063695ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1064801ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1064801ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1064818ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1064818ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1064835ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1064853ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1064868ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1064883ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1064901ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1064919ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1064934ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1065110ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1065111ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1065230ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1065230ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1065478ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1065478ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1065478ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1065495ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1065496ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1065510ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1065510ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1065527ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1065540ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1065552ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1065568ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1065585ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1065624ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1065638ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1066635ms] [ERROR] pt @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1067626ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[ 1067628ms] [ERROR] The final argument passed to %s changed size between renders. The order and size of this array must remain constant.
+
+Previous: %s
+Incoming: %s useEffect [true, [object Object],[object Object],[object Object],[object Object], sg-maxwell] [true, [object Object],[object Object],[object Object],[object Object]] @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:3272
+[ 1067656ms] [LOG] [Fast Refresh] done in 81ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[ 1135863ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[ 1135877ms] [LOG] [Fast Refresh] done in 56ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[ 1136064ms] [WARNING] Expected value to be of type number, but found null instead. @ blob:http://localhost:3000/176028aa-a995-43a9-9793-ca41a1d87e5a:8091
+[ 1136066ms] [WARNING] Expected value to be of type number, but found null instead. @ blob:http://localhost:3000/176028aa-a995-43a9-9793-ca41a1d87e5a:8091
+[ 1136201ms] [WARNING] Image "movie_or_theatre_11" could not be loaded. Please make sure you have added the image with map.addImage() or a "sprite" property in your style. You can provide missing images by listening for the "styleimagemissing" map event. @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[ 1136217ms] [WARNING] Image "street_11" could not be loaded. Please make sure you have added the image with map.addImage() or a "sprite" property in your style. You can provide missing images by listening for the "styleimagemissing" map event. @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[ 1219702ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[ 1219727ms] [LOG] [Fast Refresh] done in 19ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[ 1226979ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[ 1227006ms] [LOG] [Fast Refresh] done in 15ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[ 1232045ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[ 1232069ms] [LOG] [Fast Refresh] done in 40ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[ 1239357ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[ 1239368ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[ 1239731ms] [WARNING] Expected value to be of type number, but found null instead. @ blob:http://localhost:3000/b0b1e505-d5a3-4e04-946e-6311bbb9423d:8091
+[ 1239732ms] [WARNING] Expected value to be of type number, but found null instead. @ blob:http://localhost:3000/b0b1e505-d5a3-4e04-946e-6311bbb9423d:8091
+[ 1239840ms] [WARNING] Image "street_11" could not be loaded. Please make sure you have added the image with map.addImage() or a "sprite" property in your style. You can provide missing images by listening for the "styleimagemissing" map event. @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[ 1239850ms] [WARNING] Image "movie_or_theatre_11" could not be loaded. Please make sure you have added the image with map.addImage() or a "sprite" property in your style. You can provide missing images by listening for the "styleimagemissing" map event. @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[ 1252016ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[ 1252022ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[ 1252351ms] [WARNING] Expected value to be of type number, but found null instead. @ blob:http://localhost:3000/8f12e621-e788-4740-b2af-d9edca766dd3:8091
+[ 1252352ms] [WARNING] Expected value to be of type number, but found null instead. @ blob:http://localhost:3000/8f12e621-e788-4740-b2af-d9edca766dd3:8091
+[ 1252415ms] [WARNING] Image "street_11" could not be loaded. Please make sure you have added the image with map.addImage() or a "sprite" property in your style. You can provide missing images by listening for the "styleimagemissing" map event. @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[ 1252475ms] [WARNING] Image "movie_or_theatre_11" could not be loaded. Please make sure you have added the image with map.addImage() or a "sprite" property in your style. You can provide missing images by listening for the "styleimagemissing" map event. @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[ 1320073ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[ 1320101ms] [LOG] [Fast Refresh] done in 12ms @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[ 1328676ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[ 1328687ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[ 1329005ms] [WARNING] Expected value to be of type number, but found null instead. @ blob:http://localhost:3000/3f908ff8-8ffe-4e95-af9e-d9d43e5f5c17:8091
+[ 1329006ms] [WARNING] Expected value to be of type number, but found null instead. @ blob:http://localhost:3000/3f908ff8-8ffe-4e95-af9e-d9d43e5f5c17:8091
+[ 1329113ms] [WARNING] Image "street_11" could not be loaded. Please make sure you have added the image with map.addImage() or a "sprite" property in your style. You can provide missing images by listening for the "styleimagemissing" map event. @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[ 1329122ms] [WARNING] Image "movie_or_theatre_11" could not be loaded. Please make sure you have added the image with map.addImage() or a "sprite" property in your style. You can provide missing images by listening for the "styleimagemissing" map event. @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[ 1342772ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[ 1342777ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[ 1343132ms] [WARNING] Expected value to be of type number, but found null instead. @ blob:http://localhost:3000/f7c1402e-333c-466d-9b5d-21ce671326de:8091
+[ 1343135ms] [WARNING] Expected value to be of type number, but found null instead. @ blob:http://localhost:3000/f7c1402e-333c-466d-9b5d-21ce671326de:8091
+[ 1343192ms] [WARNING] Image "movie_or_theatre_11" could not be loaded. Please make sure you have added the image with map.addImage() or a "sprite" property in your style. You can provide missing images by listening for the "styleimagemissing" map event. @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431
+[ 1343205ms] [WARNING] Image "street_11" could not be loaded. Please make sure you have added the image with map.addImage() or a "sprite" property in your style. You can provide missing images by listening for the "styleimagemissing" map event. @ http://localhost:3000/_next/static/chunks/node_modules_next_dist_115brz8._.js:2431

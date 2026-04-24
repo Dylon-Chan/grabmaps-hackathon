@@ -1,0 +1,127 @@
+- generic [ref=e1]:
+  - main [ref=e2]:
+    - region "SEA-GO quest map" [ref=e15]:
+      - generic [ref=e17]:
+        - generic [ref=e113]:
+          - region "Map" [ref=e18]
+          - button "Map marker" [ref=e114] [cursor=pointer]:
+            - generic [ref=e115]: "1"
+          - button "Map marker" [ref=e116] [cursor=pointer]:
+            - generic [ref=e117]: "2"
+        - generic:
+          - generic [ref=e27]:
+            - button "Zoom in" [ref=e28] [cursor=pointer]
+            - button "Zoom out" [ref=e30] [cursor=pointer]
+            - button "Drag to rotate map, click to reset north" [ref=e32]
+          - group [ref=e34]:
+            - generic "Toggle attribution" [ref=e35] [cursor=pointer]
+            - generic [ref=e36]:
+              - link "© OpenMapTiles" [ref=e37] [cursor=pointer]:
+                - /url: https://www.openmaptiles.org/
+              - link "© OpenStreetMap contributors" [ref=e38] [cursor=pointer]:
+                - /url: https://www.openstreetmap.org/copyright
+              - link "Terms of Service" [ref=e39] [cursor=pointer]:
+                - /url: https://www.grab.com/terms-policies/transport-delivery-logistics
+      - generic [ref=e40]:
+        - generic [ref=e41]:
+          - generic [ref=e42]: SG
+          - generic [ref=e43]:
+            - paragraph [ref=e44]: SEA-GO
+            - heading "Guided city quests that fit your afternoon." [level=1] [ref=e45]
+        - generic [ref=e46]:
+          - generic [ref=e47]:
+            - generic [ref=e48]: City
+            - combobox "City" [ref=e49]:
+              - option "Singapore"
+              - option "Bangkok" [selected]
+          - generic [ref=e50]:
+            - generic [ref=e51]: Time
+            - spinbutton "Time" [ref=e52]: "45"
+          - generic [ref=e53]:
+            - generic [ref=e54]: Badges
+            - strong [ref=e55]: "1"
+      - complementary "Quest list" [ref=e56]:
+        - generic [ref=e57]:
+          - paragraph [ref=e58]: Bang Rak
+          - heading "Quest zones" [level=2] [ref=e59]
+        - generic [ref=e60]:
+          - button "Hidden Hawker Gems Street-side noodles, charcoal grills, and market snacks." [ref=e118] [cursor=pointer]:
+            - generic [ref=e119]: 🍜
+            - generic [ref=e120]:
+              - strong [ref=e121]: Hidden Hawker Gems
+              - generic [ref=e122]: Street-side noodles, charcoal grills, and market snacks.
+          - button "Heritage Shophouse Walk River trade, old warehouses, and temple-side facades." [ref=e123] [cursor=pointer]:
+            - generic [ref=e124]: 🏛️
+            - generic [ref=e125]:
+              - strong [ref=e126]: Heritage Shophouse Walk
+              - generic [ref=e127]: River trade, old warehouses, and temple-side facades.
+          - button "Local Neighbourhood Drift Ferries, flower sellers, alleys, and everyday errands." [ref=e128] [cursor=pointer]:
+            - generic [ref=e129]: 🌿
+            - generic [ref=e130]:
+              - strong [ref=e131]: Local Neighbourhood Drift
+              - generic [ref=e132]: Ferries, flower sellers, alleys, and everyday errands.
+          - button "Natural Scene Trail River breezes, pocket parks, and shade between busy streets." [ref=e133] [cursor=pointer]:
+            - generic [ref=e134]: 🌳
+            - generic [ref=e135]:
+              - strong [ref=e136]: Natural Scene Trail
+              - generic [ref=e137]: River breezes, pocket parks, and shade between busy streets.
+        - generic [ref=e81]:
+          - paragraph [ref=e82]:
+            - text: 45 minutes trims 6 stops to
+            - strong [ref=e83]: "2"
+            - text: .
+          - generic [ref=e84]: 29 min route · 4 held back
+      - complementary "Active stop details" [ref=e85]:
+        - generic [ref=e86]:
+          - paragraph [ref=e87]: Stop 2 of 2
+          - heading "Talat Noi Murals" [level=2] [ref=e143]
+        - generic [ref=e89]:
+          - generic [ref=e90]: Open now
+          - generic [ref=e91]: 4.4 rating
+          - generic [ref=e92]: Live
+        - paragraph [ref=e93]: Talat Noi Murals reveals a small local detail that most maps flatten into a pin.
+        - generic [ref=e94]:
+          - text: Photo prompt
+          - strong [ref=e95]: Capture the place with one human detail and one environmental clue.
+        - generic [ref=e96]:
+          - button "Prev" [ref=e97] [cursor=pointer]
+          - button "Walk here" [ref=e98] [cursor=pointer]
+          - button "Collect" [ref=e99] [cursor=pointer]
+        - generic [ref=e100]:
+          - generic [ref=e101]: Upload prepared photo
+          - button "Upload prepared photo" [active] [ref=e102]
+        - generic [ref=e144]:
+          - strong [ref=e145]: Location verified
+          - generic [ref=e146]: "Photo cues match Holy Rosary Church: signage, queue flow, and food-centre context are present."
+        - generic [ref=e147]:
+          - generic [ref=e148]:
+            - paragraph [ref=e149]: Silver badge · Holy Rosary Church
+            - strong [ref=e150]: 78/100
+          - generic [ref=e151]:
+            - generic [ref=e152]:
+              - text: Location
+              - generic [ref=e153]: "92"
+            - generic [ref=e154]:
+              - text: Authenticity
+              - generic [ref=e155]: "88"
+            - generic [ref=e156]:
+              - text: Composition
+              - generic [ref=e157]: "74"
+            - generic [ref=e158]:
+              - text: Culture
+              - generic [ref=e159]: "84"
+            - generic [ref=e160]:
+              - text: Lighting
+              - generic [ref=e161]: "79"
+          - paragraph [ref=e162]: Strong place context. Step a little closer to include one local texture, like signage, a counter detail, or someone ordering.
+          - generic [ref=e163]: Score Gold to unlock the deeper local note for this stop.
+      - navigation "Route stops" [ref=e103]:
+        - button "Silver Holy Rosary Church" [ref=e164] [cursor=pointer]:
+          - generic [ref=e140]: Silver
+          - text: Holy Rosary Church
+        - button "2 Talat Noi Murals" [ref=e141] [cursor=pointer]:
+          - generic [ref=e142]: "2"
+          - text: Talat Noi Murals
+  - button "Open Next.js Dev Tools" [ref=e11] [cursor=pointer]:
+    - img [ref=e12]
+  - alert [ref=e112]

@@ -1,8 +1,11 @@
 from __future__ import annotations
 
 import asyncio
+import logging
 from contextlib import asynccontextmanager
 from typing import Any
+
+logger = logging.getLogger(__name__)
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -10,6 +13,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.config import get_settings
 from app.data import cities, get_country_code_for_place_id, get_stop_by_place_id, quests
 from app.grabmaps_client import GrabMapsClient
+from app.map_style import browser_safe_map_style
 from app.models import (
     Coordinates,
     PhotoScoreRequest,
@@ -22,7 +26,7 @@ from app.models import (
 )
 from app.photo_scoring import score_photo, verify_photo
 from app.route_trimming import trim_quest_to_budget
-from app.routing import build_route_legs, route_totals
+from app.routing import align_polyline_to_stops, build_route_legs, route_totals
 
 settings = get_settings()
 
@@ -129,11 +133,12 @@ async def place_details(place_id: str) -> dict[str, Any]:
 @app.get("/api/map/style")
 async def map_style() -> dict[str, Any]:
     if not settings.grabmaps_api_key:
-        return {"source": "fallback", "style": None}
+        return {"source": "fallback", "style": None, "apiKey": None}
 
     client = GrabMapsClient(api_key=settings.grabmaps_api_key, base_url=settings.grabmaps_base_url)
     try:
-        return {"source": "live", "style": await client.get_map_style()}
+        style = browser_safe_map_style(await client.get_map_style())
+        return {"source": "live", "style": style, "apiKey": settings.grabmaps_api_key}
     finally:
         await client.close()
 
@@ -227,7 +232,8 @@ async def _live_legs(stops: list) -> list[RouteLeg] | None:
             for source, target in zip(stops, stops[1:])
         ]
         routes = await asyncio.gather(*tasks)
-    except Exception:
+    except Exception as exc:
+        logger.warning("GrabMaps directions request failed: %s", exc)
         return None
     finally:
         await client.close()
@@ -242,7 +248,7 @@ async def _live_legs(stops: list) -> list[RouteLeg] | None:
                 toStopId=target.id,
                 minutes=max(1, round(route.duration_seconds / 60)),
                 distanceMeters=route.distance_meters,
-                polyline=route.geometry or [source.coordinates, target.coordinates],
+                polyline=align_polyline_to_stops(source, target, route.geometry),
             )
         )
     return legs
@@ -252,7 +258,8 @@ async def _search_live_place(name: str, location: Coordinates, country: str) -> 
     client = GrabMapsClient(api_key=settings.grabmaps_api_key or "", base_url=settings.grabmaps_base_url)
     try:
         result = await client.search_places(keyword=name, country=country, location=location, limit=1)
-    except Exception:
+    except Exception as exc:
+        logger.warning("GrabMaps place search failed: %s", exc)
         return None
     finally:
         await client.close()

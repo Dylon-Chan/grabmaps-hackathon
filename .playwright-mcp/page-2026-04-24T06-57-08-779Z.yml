@@ -1,0 +1,108 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - region "SEA-GO quest map" [ref=e3]:
+      - generic [ref=e5]:
+        - generic:
+          - region "Map" [ref=e183]
+          - button "Map marker" [ref=e184] [cursor=pointer]:
+            - generic [ref=e185]: "1"
+          - button "Map marker" [ref=e186] [cursor=pointer]:
+            - generic [ref=e187]: "2"
+          - button "Map marker" [ref=e188] [cursor=pointer]:
+            - generic [ref=e189]: "3"
+        - generic:
+          - generic:
+            - generic [ref=e190]:
+              - button "Zoom in" [ref=e191] [cursor=pointer]
+              - button "Zoom out" [ref=e193] [cursor=pointer]
+              - button "Drag to rotate map, click to reset north" [ref=e195]
+            - group [ref=e197]:
+              - generic "Toggle attribution" [ref=e198] [cursor=pointer]
+              - generic [ref=e199]:
+                - link "© OpenMapTiles" [ref=e200] [cursor=pointer]:
+                  - /url: https://www.openmaptiles.org/
+                - link "© OpenStreetMap contributors" [ref=e201] [cursor=pointer]:
+                  - /url: https://www.openstreetmap.org/copyright
+                - link "Terms of Service" [ref=e202] [cursor=pointer]:
+                  - /url: https://www.grab.com/terms-policies/transport-delivery-logistics
+      - generic [ref=e6]:
+        - generic [ref=e7]:
+          - generic [ref=e8]: SG
+          - generic [ref=e9]:
+            - paragraph [ref=e10]: SEA-GO
+            - heading "Guided city quests that fit your afternoon." [level=1] [ref=e11]
+        - generic [ref=e12]:
+          - generic [ref=e13]:
+            - generic [ref=e14]: City
+            - combobox "City" [ref=e15]:
+              - option "Singapore"
+              - option "Bangkok" [selected]
+          - generic [ref=e16]:
+            - generic [ref=e17]: Time
+            - spinbutton "Time" [ref=e18]: "60"
+          - generic [ref=e19]:
+            - generic [ref=e20]: Badges
+            - strong [ref=e21]: "0"
+      - complementary "Quest list" [ref=e22]:
+        - generic [ref=e23]:
+          - paragraph [ref=e24]: Bang Rak
+          - heading "Quest zones" [level=2] [ref=e25]
+        - generic [ref=e26]:
+          - button "Hidden Hawker Gems Street-side noodles, charcoal grills, and market snacks." [ref=e163] [cursor=pointer]:
+            - generic [ref=e164]: 🍜
+            - generic [ref=e165]:
+              - strong [ref=e166]: Hidden Hawker Gems
+              - generic [ref=e167]: Street-side noodles, charcoal grills, and market snacks.
+          - button "Heritage Shophouse Walk River trade, old warehouses, and temple-side facades." [ref=e168] [cursor=pointer]:
+            - generic [ref=e169]: 🏛️
+            - generic [ref=e170]:
+              - strong [ref=e171]: Heritage Shophouse Walk
+              - generic [ref=e172]: River trade, old warehouses, and temple-side facades.
+          - button "Local Neighbourhood Drift Ferries, flower sellers, alleys, and everyday errands." [ref=e173] [cursor=pointer]:
+            - generic [ref=e174]: 🌿
+            - generic [ref=e175]:
+              - strong [ref=e176]: Local Neighbourhood Drift
+              - generic [ref=e177]: Ferries, flower sellers, alleys, and everyday errands.
+          - button "Natural Scene Trail River breezes, pocket parks, and shade between busy streets." [ref=e178] [cursor=pointer]:
+            - generic [ref=e179]: 🌳
+            - generic [ref=e180]:
+              - strong [ref=e181]: Natural Scene Trail
+              - generic [ref=e182]: River breezes, pocket parks, and shade between busy streets.
+        - generic [ref=e47]:
+          - paragraph [ref=e48]:
+            - text: 60 minutes trims 6 stops to
+            - strong [ref=e49]: "3"
+            - text: .
+          - generic [ref=e50]: 51 min route · 3 held back
+      - complementary "Active stop details" [ref=e51]:
+        - generic [ref=e52]:
+          - paragraph [ref=e53]: Stop 1 of 3
+          - heading "Charoen Krung Noodle Stall" [level=2] [ref=e203]
+        - generic [ref=e55]:
+          - generic [ref=e56]: Open now
+          - generic [ref=e57]: 4.4 rating
+          - generic [ref=e58]: Live
+        - paragraph [ref=e59]: Charoen Krung Noodle Stall reveals a small local detail that most maps flatten into a pin.
+        - generic [ref=e60]:
+          - text: Photo prompt
+          - strong [ref=e61]: Capture the place with one human detail and one environmental clue.
+        - generic [ref=e62]:
+          - button "Prev" [ref=e63] [cursor=pointer]
+          - button "Walk here" [ref=e64] [cursor=pointer]
+          - button "Collect" [ref=e65] [cursor=pointer]
+        - generic [ref=e66]:
+          - generic [ref=e67]: Upload prepared photo
+          - button "Upload prepared photo" [ref=e68]
+      - navigation "Route stops" [ref=e69]:
+        - button "1 Charoen Krung Noodle Stall" [ref=e204] [cursor=pointer]:
+          - generic [ref=e205]: "1"
+          - text: Charoen Krung Noodle Stall
+        - button "2 Bang Rak Market Bites" [ref=e206] [cursor=pointer]:
+          - generic [ref=e207]: "2"
+          - text: Bang Rak Market Bites
+        - button "3 Saphan Taksin Snacks" [ref=e208] [cursor=pointer]:
+          - generic [ref=e209]: "3"
+          - text: Saphan Taksin Snacks
+  - button "Open Next.js Dev Tools" [ref=e83] [cursor=pointer]:
+    - img [ref=e84]
+  - alert [ref=e87]
