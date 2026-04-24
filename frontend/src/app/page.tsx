@@ -1,5 +1,5 @@
-import { SeaGoApp } from "@/components/SeaGoApp";
+import { QuestPassApp } from "@/components/QuestPassApp";
 
 export default function Home() {
-  return <SeaGoApp />;
+  return <QuestPassApp />;
 }
