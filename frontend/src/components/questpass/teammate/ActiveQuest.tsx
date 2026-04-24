@@ -1,9 +1,10 @@
 // @ts-nocheck
 "use client";
+import { GrabMap } from "@/components/GrabMap";
 import * as React from "react";
 
 // Screen 3: Active Quest — with location state machine + distance + CTA states
-export const ActiveQuest = ({ quest, onStopUnlocked, onBack, onComplete, locationState, userLocation, onRequestLocation, demoMode, airportState, flightMinsRemaining, initialStopIdx = 0, unlockedStopIds = [] as string[] }) => {
+export const ActiveQuest = ({ quest, onStopUnlocked, onBack, onComplete, locationState, userLocation, onRequestLocation, demoMode, airportState, flightMinsRemaining, initialStopIdx = 0, unlockedStopIds = [] as string[], city, route }) => {
   const [currentStopIdx, setCurrentStopIdx] = React.useState(initialStopIdx);
   const [hintUsed, setHintUsed] = React.useState(false);
   const [arriving, setArriving] = React.useState(false);
@@ -293,39 +294,20 @@ export const ActiveQuest = ({ quest, onStopUnlocked, onBack, onComplete, locatio
 
       {/* Mini-map */}
       <div style={aqStyles.miniMapSection}>
-        <div style={aqStyles.miniMapLabel}>ROUTE TRAIL</div>
+        <div style={aqStyles.miniMapLabel}>LIVE GRABMAPS ROUTE</div>
         <div style={aqStyles.miniMap}>
-          <svg width="100%" viewBox="0 0 300 80" style={{ display: 'block' }}>
-            <defs>
-              <filter id="aqNodeGlow">
-                <feGaussianBlur stdDeviation="3" result="blur" />
-                <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
-              </filter>
-            </defs>
-            <rect width="300" height="80" fill="#0d1020" rx="8" />
-            {quest.stops_data.map((stop, i, arr) => {
-              if (i === 0) return null;
-              const prev = arr[i - 1];
-              const x1 = 30 + (prev.coords.x / 100) * 240;
-              const y1 = (prev.coords.y / 100) * 60 + 10;
-              const x2 = 30 + (stop.coords.x / 100) * 240;
-              const y2 = (stop.coords.y / 100) * 60 + 10;
-              return <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke={stops[i - 1]?.unlocked ? quest.color : 'rgba(255,255,255,0.1)'} strokeWidth="1.5" strokeDasharray={stops[i - 1]?.unlocked ? 'none' : '3,3'} />;
-            })}
-            {quest.stops_data.map((stop, i) => {
-              const cx = 30 + (stop.coords.x / 100) * 240;
-              const cy = (stop.coords.y / 100) * 60 + 10;
-              const isDone = stops[i]?.unlocked;
-              const isCurrent = i === currentStopIdx;
-              const isFutureStop = i > currentStopIdx;
-              return (
-                <g key={i}>
-                  <circle cx={cx} cy={cy} r={isCurrent ? 7 : 5} fill={isDone ? quest.color : isCurrent ? '#e040a0' : 'rgba(255,255,255,0.15)'} filter={isCurrent ? 'url(#aqNodeGlow)' : undefined} />
-                  {isFutureStop && <text x={cx} y={cy + 1} textAnchor="middle" fontSize="6" fill="white" dy="0.35em">?</text>}
-                </g>
-              );
-            })}
-          </svg>
+          {city && (
+            <GrabMap
+              city={city}
+              stops={quest.sourceQuest.stops}
+              activeStopId={currentStop.sourceStop.id}
+              route={route}
+              onStopSelect={(stopId) => {
+                const idx = quest.sourceQuest.stops.findIndex((stop) => stop.id === stopId);
+                if (idx !== -1) setCurrentStopIdx(idx);
+              }}
+            />
+          )}
         </div>
       </div>
     </div>
@@ -389,5 +371,5 @@ const aqStyles = {
   arrivalNote: { fontSize: 11, color: 'rgba(240,242,255,0.25)', textAlign: 'center', marginTop: 8 },
   miniMapSection: { padding: '20px 16px 0' },
   miniMapLabel: { fontSize: 10, fontWeight: 800, letterSpacing: '0.12em', color: 'rgba(240,242,255,0.3)', textTransform: 'uppercase', marginBottom: 8, fontFamily: "'Space Grotesk', sans-serif" },
-  miniMap: { borderRadius: 10, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.06)' },
+  miniMap: { position: 'relative', height: 170, borderRadius: 10, overflow: 'hidden', border: '1px solid rgba(255,255,255,0.06)' },
 };

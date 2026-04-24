@@ -3,6 +3,7 @@
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { useEffect, useRef, useState } from "react";
+import { styleWithApiBaseUrl } from "@/lib/grabMapStyle";
 import { syncRouteLayer, type RouteForMap } from "@/lib/mapRoute";
 import type { City, QuestStop } from "@/lib/types";
 
@@ -45,7 +46,7 @@ export function GrabMap({
         const currentCity = latestCityRef.current;
         map = new maplibregl.Map({
           container: containerRef.current,
-          style: style ?? "https://demotiles.maplibre.org/style.json",
+          style: style ? styleWithApiBaseUrl(style, API_BASE_URL) : "https://demotiles.maplibre.org/style.json",
           center: [currentCity.center.lng, currentCity.center.lat],
           zoom: currentCity.zoom,
           attributionControl: false,

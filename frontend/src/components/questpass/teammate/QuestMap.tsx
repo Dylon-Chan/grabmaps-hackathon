@@ -1,9 +1,10 @@
 // @ts-nocheck
 "use client";
+import { GrabMap } from "@/components/GrabMap";
 import * as React from "react";
 
 // Screen 1: Quest Map — Landing
-export const QuestMap = ({ onSelectTime, onOpenPassport, userXP, userLevel, airportState, flightMinsRemaining, onEditFlight }) => {
+export const QuestMap = ({ onSelectTime, onOpenPassport, userXP, userLevel, airportState, flightMinsRemaining, onEditFlight, city, activeQuest, route }) => {
   const [selectedTime, setSelectedTime] = React.useState(null);
   const [hoveredZone, setHoveredZone] = React.useState(null);
   const [tick, setTick] = React.useState(0);
@@ -64,12 +65,21 @@ export const QuestMap = ({ onSelectTime, onOpenPassport, userXP, userLevel, airp
 
       {/* Singapore Quest Map */}
       <div style={questMapStyles.mapContainer}>
-        <SingaporeMap
-          neighborhoods={window.NEIGHBORHOODS}
-          hoveredZone={hoveredZone}
-          setHoveredZone={setHoveredZone}
-          tick={tick}
-        />
+        {city && activeQuest ? (
+          <GrabMap
+            city={city}
+            stops={activeQuest.sourceQuest.stops}
+            activeStopId={activeQuest.sourceQuest.stops[0]?.id}
+            route={route}
+          />
+        ) : (
+          <SingaporeMap
+            neighborhoods={window.NEIGHBORHOODS}
+            hoveredZone={hoveredZone}
+            setHoveredZone={setHoveredZone}
+            tick={tick}
+          />
+        )}
         {hoveredZone && (
           <div style={questMapStyles.zoneTooltip}>
             <span style={{ color: hoveredZone.color, fontWeight: 700 }}>{hoveredZone.name}</span>
@@ -334,6 +344,7 @@ const questMapStyles = {
   },
   mapContainer: {
     position: 'relative', margin: '16px 16px 0',
+    height: 372,
     borderRadius: 16, overflow: 'hidden',
     border: '1px solid rgba(61,143,245,0.15)',
     boxShadow: '0 0 40px rgba(61,143,245,0.08), inset 0 0 60px rgba(0,0,0,0.4)',
@@ -417,4 +428,3 @@ const questMapStyles = {
     fontFamily: "'Space Grotesk', sans-serif",
   },
 };
-
