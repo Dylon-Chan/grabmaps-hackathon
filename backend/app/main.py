@@ -5,9 +5,7 @@ import logging
 from contextlib import asynccontextmanager
 from typing import Any
 
-logger = logging.getLogger(__name__)
-
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Response
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import get_settings
@@ -28,6 +26,7 @@ from app.photo_scoring import score_photo, verify_photo
 from app.route_trimming import trim_quest_to_budget
 from app.routing import align_polyline_to_stops, build_route_legs, route_totals
 
+logger = logging.getLogger(__name__)
 settings = get_settings()
 
 
@@ -133,12 +132,25 @@ async def place_details(place_id: str) -> dict[str, Any]:
 @app.get("/api/map/style")
 async def map_style() -> dict[str, Any]:
     if not settings.grabmaps_api_key:
-        return {"source": "fallback", "style": None, "apiKey": None}
+        return {"source": "fallback", "style": None}
 
     client = GrabMapsClient(api_key=settings.grabmaps_api_key, base_url=settings.grabmaps_base_url)
     try:
         style = browser_safe_map_style(await client.get_map_style())
-        return {"source": "live", "style": style, "apiKey": settings.grabmaps_api_key}
+        return {"source": "live", "style": style}
+    finally:
+        await client.close()
+
+
+@app.get("/api/map/tiles/v2/vector/{tileset}/{z}/{x}/{y}.pbf")
+async def map_vector_tile(tileset: str, z: int, x: int, y: int) -> Response:
+    if not settings.grabmaps_api_key:
+        raise HTTPException(status_code=503, detail="GRABMAPS_API_KEY is not configured.")
+
+    client = GrabMapsClient(api_key=settings.grabmaps_api_key, base_url=settings.grabmaps_base_url)
+    try:
+        content, content_type = await client.get_vector_tile(tileset, z, x, y)
+        return Response(content=content, media_type=content_type)
     finally:
         await client.close()
 

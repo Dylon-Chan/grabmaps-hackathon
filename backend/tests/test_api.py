@@ -2,6 +2,7 @@ from fastapi.testclient import TestClient
 
 from app import data as quest_data
 from app.map_style import browser_safe_map_style
+from app import main as main_module
 from app.main import app
 from app.models import Coordinates
 from app.routing import align_polyline_to_stops
@@ -106,10 +107,10 @@ def test_map_style_rewrites_legacy_grabmaps_vector_tiles_to_api_urls():
     rewritten = browser_safe_map_style(style)
 
     assert rewritten["sources"]["grabmaptiles"]["tiles"] == [
-        "https://maps.grab.com/api/maps/tiles/v2/vector/karta-v3/{z}/{x}/{y}.pbf"
+        "/api/map/tiles/v2/vector/karta-v3/{z}/{x}/{y}.pbf"
     ]
     assert rewritten["sources"]["internalpoitiles"]["tiles"] == [
-        "https://maps.grab.com/api/maps/tiles/v2/vector/internal-poi-v3/{z}/{x}/{y}.pbf"
+        "/api/map/tiles/v2/vector/internal-poi-v3/{z}/{x}/{y}.pbf"
     ]
     assert style["sources"]["grabmaptiles"]["tiles"] == [
         "https://maps.grab.com/maps/tiles/v2/vector/karta-v3/{z}/{x}/{y}.pbf"
@@ -132,3 +133,61 @@ def test_map_style_keeps_browser_safe_styles():
     }
 
     assert browser_safe_map_style(style) == style
+
+
+def test_map_style_rewrites_api_grabmaps_vector_tiles_to_backend_proxy_urls():
+    style = {
+        "version": 8,
+        "sources": {
+            "grabmaptiles": {
+                "type": "vector",
+                "tiles": ["https://maps.grab.com/api/maps/tiles/v2/vector/karta-v3/{z}/{x}/{y}.pbf"],
+            },
+        },
+        "layers": [],
+    }
+
+    rewritten = browser_safe_map_style(style)
+
+    assert rewritten["sources"]["grabmaptiles"]["tiles"] == [
+        "/api/map/tiles/v2/vector/karta-v3/{z}/{x}/{y}.pbf"
+    ]
+
+
+def test_map_style_response_does_not_expose_api_key():
+    response = client.get("/api/map/style")
+
+    assert response.status_code == 200
+    assert set(response.json()) == {"source", "style"}
+
+
+def test_map_vector_tile_endpoint_streams_live_tile_bytes(monkeypatch):
+    seen: dict[str, object] = {}
+
+    class FakeGrabMapsClient:
+        def __init__(self, api_key: str, base_url: str) -> None:
+            seen["api_key"] = api_key
+            seen["base_url"] = base_url
+
+        async def get_vector_tile(self, tileset: str, z: int, x: int, y: int) -> tuple[bytes, str]:
+            seen["tile"] = (tileset, z, x, y)
+            return b"tile-bytes", "application/x-protobuf"
+
+        async def close(self) -> None:
+            seen["closed"] = True
+
+    monkeypatch.setattr(main_module.settings, "grabmaps_api_key", "test-key")
+    monkeypatch.setattr(main_module.settings, "grabmaps_base_url", "https://maps.grab.com")
+    monkeypatch.setattr(main_module, "GrabMapsClient", FakeGrabMapsClient)
+
+    response = client.get("/api/map/tiles/v2/vector/karta-v3/12/3456/7890.pbf")
+
+    assert response.status_code == 200
+    assert response.content == b"tile-bytes"
+    assert response.headers["content-type"] == "application/x-protobuf"
+    assert seen == {
+        "api_key": "test-key",
+        "base_url": "https://maps.grab.com",
+        "tile": ("karta-v3", 12, 3456, 7890),
+        "closed": True,
+    }

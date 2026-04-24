@@ -57,6 +57,14 @@ class GrabMapsClient:
             raw=data,
         )
 
+    async def get_vector_tile(self, tileset: str, z: int, x: int, y: int) -> tuple[bytes, str]:
+        response = await self.http_client.get(
+            f"/api/maps/tiles/v2/vector/{tileset}/{z}/{x}/{y}.pbf",
+            headers=self._headers(),
+        )
+        response.raise_for_status()
+        return response.content, response.headers.get("content-type", "application/x-protobuf")
+
     async def search_places(
         self,
         keyword: str,
