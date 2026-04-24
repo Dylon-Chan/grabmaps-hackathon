@@ -1,5 +1,9 @@
 node_modules/
 .next/
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
 out/
 dist/
 coverage/
@@ -7,4 +11,3 @@ coverage/
 !.env.example
 .DS_Store
 npm-debug.log*
-
