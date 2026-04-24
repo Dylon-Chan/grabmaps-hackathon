@@ -31,6 +31,20 @@ make frontend
 
 The frontend calls FastAPI through `NEXT_PUBLIC_API_BASE_URL`.
 
+If port 8000 is already in use, run the backend on another port and point the
+frontend at it:
+
+```bash
+make backend BACKEND_PORT=8010
+make frontend API_BASE_URL=http://localhost:8010
+```
+
+For both apps together:
+
+```bash
+make dev BACKEND_PORT=8010 FRONTEND_PORT=3001 API_BASE_URL=http://localhost:8010
+```
+
 ## GrabMaps Endpoints Used
 
 Per the local `SKILL.md`, the FastAPI backend uses:
