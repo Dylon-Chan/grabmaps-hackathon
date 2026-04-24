@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "SEA-GO",
-  description: "Guided city quests that fit your afternoon."
+  title: "QuestPass SG",
+  description: "Turn a Singapore layover into a time-safe city quest."
 };
 
 export default function RootLayout({
@@ -17,4 +17,3 @@ export default function RootLayout({
     </html>
   );
 }
-
